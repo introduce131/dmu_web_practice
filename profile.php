@@ -12,11 +12,7 @@
 <body>
 	<div class="wrap">
 	
-        <header>
-            <ul class="gnb">
-                <li><a href="logout.php">로그아웃</a></li>
-            </ul>
-        </header>
+        <?php include "header.php";?>
         
         <?php
         if(!isset($_SESSION['login_id'])) {
@@ -27,7 +23,7 @@
         else {
             $con = mysqli_connect("localhost", "root", "", "testdb");
             mysqli_set_charset($con, "utf8");
-            $query = "select id, name, profileText from member where id='".$_GET["id"]."'";
+            $query = "select id, birth, address, email, password, name, profileText from member where id='".$_GET["id"]."'";
             
             $result = mysqli_query($con, $query);
             $record_count = mysqli_num_rows($result);
@@ -36,7 +32,11 @@
             // 데이터가 있으면?
             if ($record_count > 0) {
                 $id = $row["id"];
+                $password = $row["password"];
                 $name = $row["name"];
+                $birth = $row["birth"];
+                $address = $row["address"];
+                $email = $row["email"];
                 $profileText = $row["profileText"];
                 
                 echo "
@@ -55,13 +55,25 @@
                 
                 <form id="article" method="post" action="member_profile.php">
                     <div>
-                        <input type="hidden" name="user_id" value=<?=$id?>></input>
+                    	<span>아이디</span>
+                        <input type="text" name="user_id" value=<?=$id?> readonly></input>
+                        
+                        <span>비밀번호</span>
+                        <input type="text" name="user_password" value=<?=$password?>></input>
                         
                         <div class=user_name">
-                        	<input type="text" name="user_name" value=<?=$name?> readonly></input>
+                        	<span>이  름</span>
+                        	<input type="text" name="user_name" value=<?=$name?>></input>
                         </div>
                         
-                        <br/>
+                        <span>생년월일</span>
+                        <input type="date" name="user_birth" value=<?=$birth?>>
+                        
+                        <span>주  소</span>
+                        <input type="text" name="user_address" value=<?=$address?>>
+                        
+                        <span>E-mail</span>
+                        <input type="text" name="user_email" value=<?=$email?>>
                         
                         <div class="text_frame">
                         	<span class="introdution"> 소개글</span>
@@ -70,6 +82,8 @@
                         <input type="submit" value="저장"/>
                     </div>
                 </form>
+                <br/><br/><br/>
+                <a href="user_delete.php" id="btn_user_delete">회원 탈퇴</a>
             </section>
         <?php 
         }

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    // id 중복체크를 했는지 검사하는 부분
+    if(!isset($_SESSION["is_checked"])) {
+        $_SESSION['is_checked'] = false;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="././css/style.css">
+    <script>
+    	   function check_id() {
+     		window.open("id_check.php?id=" + document.member_form.id.value,
+         	"ID 중복 확인",
+          	"left=700,top=300,width=350,height=200,scrollbars=no,resizable=yes");
+   			}
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -18,7 +33,10 @@
 
                <ul>
                     <li><input type="text" id="user_name" name="name" placeholder="이름" > </li>
-                    <li><input type="text" id="user_id" name="id" placeholder="아이디" >
+                    <li>
+                    	<input type="text" id="user_id" name="id" placeholder="아이디" class="email1">
+                    	<input type="button" id="id_duplicate" value="id 중복 확인" class="email2" onclick="check_id()">
+                    </li>
                     <li><input type="password" id="user_password" name="password"  placeholder="비밀번호" ></li>
                     <li><input type="text" name="email1" placeholder="이메일" class="email1">@<input type="text" name="email2" class="email2"></li>
                     <li><input type="text" name="address" placeholder="주소"></li>

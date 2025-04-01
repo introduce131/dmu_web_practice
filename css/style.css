@@ -64,7 +64,6 @@ form{
 
 ul{
     width: 100%;
-   
 }
 .overlap{
     width: 80px;
@@ -80,9 +79,8 @@ li{
     list-style: none;
     height: 55px;
     margin: 30px auto;
-  border: 1px solid #b6b5b5;
-  border-radius: 8px;
-   
+    border: 1px solid #b6b5b5;
+    border-radius: 8px; 
 }
 
 .email1{
@@ -100,6 +98,7 @@ li{
     padding-left: 10px;
     border: 1px solid #b6b5b5;
 }
+
 input{
     margin: 0;              /* 기본 마진 제거 */
     padding: 0;             /* 기본 패딩 제거 */
@@ -113,14 +112,17 @@ input{
     height: 90%;
     margin-left: 30px;
     border-radius: 8px;
-    /*border: 1px solid #919191;*/
-    
+    /*border: 1px solid #919191;*/    
+}
+
+li:nth-child(2){
+    border: none;
 }
 
 li:nth-child(4){
     border: none;
 }
-
+	
 .submit_button{
     display: block;
     width: 300px;

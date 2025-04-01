@@ -51,7 +51,7 @@ header{
 
 section{
     width: 400px;
-    height: 600px;
+    height: 900px;
     padding: 10px;
     margin: 60px auto;
     border-radius: 15px;
@@ -141,7 +141,6 @@ form{
     
 }
 
-
   
   textarea:focus {
     
@@ -154,4 +153,8 @@ input[type="submit"]{
     width: 100%;
     height: 30px;
     margin-top: 25px;
+}
+
+#btn_user_delete {
+	color:red;
 }
