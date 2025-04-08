@@ -1,20 +1,22 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/boardlist.css">
 </head>
 <body>
-    <?php include "header.php";?>
+    <div class="wrap">
+    	<?php include "header.php";?>
     
     <br/>
     
-    <Table>
+    <p>게시판</p>
+    
+    
+    <div class="table_wrap">
+    	<Table>
     	<tr>
     		<th>게시글번호</th>
     		<th>제목</th>
@@ -22,6 +24,8 @@
     		<th>작성일자</th>
     	</tr>
     		<?php
+    		    $login_id = $_SESSION["login_id"];
+    		    
         		$con = mysqli_connect("localhost", "root", "", "testdb");
         		
         		$query = "select num, title, author_name, createDt from board";
@@ -49,5 +53,15 @@
         		}
     		?>
     </Table>
+    <?php
+        if(isset($_SESSION["login_id"])) {
+    ?>
+    	<a href="post_write.php?id=<?=$login_id?>">글쓰기</a>
+    <?php 
+        }
+    ?>
+    </div>
+  
+    </div>
 </body>
 </html>

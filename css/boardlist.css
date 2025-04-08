@@ -1,0 +1,42 @@
+.table_wrap{
+	position:relative;
+	width:800px;
+	margin:80px auto;
+		
+}
+table{
+width:800px;
+	margin:40px auto;
+	
+}
+
+.writing{
+	margin:0 ;
+}
+
+tbody{
+}
+th{
+	padding:15px 0px ;
+	
+}
+tr{
+	border-bottom: 1px solid #8a8888;
+}
+
+td{
+	height:50px;
+	text-align:center;
+}
+td:nth-child(1){
+	width:100px;
+}
+td:nth-child(2){
+	width:200px;
+	text-align:center;
+}
+
+td:nth-child(3){
+	width:150px;
+	text-align:center;
+}

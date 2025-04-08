@@ -1,8 +1,16 @@
 <?php
-  
     session_start();
-    $id = $_GET['id'];
-    ?>
+    $id = $_SESSION['login_id'];
+    
+    
+    if(!isset($id)){
+         echo "
+                <script>
+                    location.href='error.php';
+                </script>
+              ";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +36,6 @@
                 <li><a href="boardlist.php">게시판</a></li>
                 <li><a href="logout.php">로그아웃</a></li>
             </ul>
-            
        
         </header>
 </body>
