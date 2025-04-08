@@ -33,9 +33,9 @@ CREATE TABLE board(
 
 ### 4번, 게시판의 예시 데이터
 ```sql
-insert into board(title, author_id, author_name, content, createDt) values("첫번쨰 게시글", "chltjrals5016, "최석민", "첫번째 게시글 입니다", now());
-insert into board(title, author_id, author_name, content, createDt) values("두번쨰 게시글", "chltjrals5016, "최석민", "두번째 게시글 입니다", now());
-insert into board(title, author_id, author_name, content, createDt) values("세번쨰 게시글", "chltjrals5016, "최석민", "세번째 게시글 입니다", now());
-insert into board(title, author_id, author_name, content, createDt) values("네번쨰 게시글", "chltjrals5016, "최석민", "네번째 게시글 입니다", now());
-insert into board(title, author_id, author_name, content, createDt) values("다섯번쨰 게시글", "chltjrals5016, "최석민", "다섯번째 게시글 입니다", now());
+insert into board(title, author_id, author_name, content, createDt) values("첫번쨰 게시글", "chltjrals5016", "최석민", "첫번째 게시글 입니다", now());
+insert into board(title, author_id, author_name, content, createDt) values("두번쨰 게시글", "chltjrals5016", "최석민", "두번째 게시글 입니다", now());
+insert into board(title, author_id, author_name, content, createDt) values("세번쨰 게시글", "chltjrals5016", "최석민", "세번째 게시글 입니다", now());
+insert into board(title, author_id, author_name, content, createDt) values("네번쨰 게시글", "chltjrals5016", "최석민", "네번째 게시글 입니다", now());
+insert into board(title, author_id, author_name, content, createDt) values("다섯번쨰 게시글", "chltjrals5016", "최석민", "다섯번째 게시글 입니다", now());
 ```
