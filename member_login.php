@@ -27,7 +27,7 @@ if ($record_count > 0) {
         echo "
             <script>
                 alert('로그인 성공!!');
-                location.href = 'profile.php?id=".$id."'
+                location.href = 'lobby.php?id=".$id."'
             </script>
         ";
     } else {

@@ -91,7 +91,7 @@
             <ul class="form_wrap">
                 아이디 *
                 <li class="id_wrap">
-                     <input type="text" id="user_id" name="id" placeholder="예)abc@gmail.com" class="email1">
+                     <input type="text" id="user_id" name="id" placeholder="예) abc@gmail.com" class="email1">
                     <input type="button" id="id_duplicate" value="중복 확인" class="email2" onclick="check_id()">
                 </li>
                 <li>비밀번호 * <input type="password" id="user_password" name="password" placeholder="영문,숫자 조합 8~16자" ></li>

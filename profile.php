@@ -1,6 +1,4 @@
-<?php
-    session_start();  // 세션 시작
- ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +63,7 @@
                         <span>비밀번호</span>
                         <input type="text" name="user_password" value=<?=$password?>></input>
                         
-                        <div class=user_name">
+                        <div class="user_name">
                         	<span>이  름</span>
                         	<input type="text" name="user_name" value=<?=$name?>></input>
                         </div>

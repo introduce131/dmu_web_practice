@@ -20,7 +20,7 @@
         echo "
                 <script>
                     alert('성공적으로 저장 되었습니다.');
-                    location.href = 'profile.php?id=".$user_id."';
+                    location.href = 'profile_modified.php?id=".$user_id."';
                 </script>
         ";
     } else {

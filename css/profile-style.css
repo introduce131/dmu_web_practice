@@ -29,12 +29,21 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
 }
-
+.return_to_lobby{
+  text-align: left;
+}
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+.nav{
+  margin: 0;
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  margin-left: 30px;
 }
 
 
@@ -43,6 +52,7 @@ img {
 }
 
 header{
+  display: flex;
     position: relative;
     height: 70px;
 	border-bottom: 1px solid rgb(142, 142, 142);
@@ -109,8 +119,8 @@ p{
 }
 
 .user_name{
-    width: 100px;
-    
+    width: 100%;
+    display: block;
     margin: 0 auto;
    /* text-align: left;*/
 }
