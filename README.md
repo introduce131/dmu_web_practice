@@ -25,6 +25,7 @@ CREATE TABLE board(
   title varchar(50) not null,
   author_id varchar(50) not null,
   author_name varchar(50) not null,
+  content varchar(500) not null,
   createDt datetime not null,
   primary key(num)
 );
