@@ -48,7 +48,11 @@
             }
             
         ?> 
+        
+        <p>프로필 수정</p>
            <section>
+           
+                
                 <div class="picture_frame">
                     <img src="./images/profile-img.jfif" class='profile_pic'/>
                 </div>
@@ -82,7 +86,7 @@
                         <input type="submit" value="저장"/>
                     </div>
                 </form>
-                <br/><br/><br/>
+                
                 <a href="user_delete.php" id="btn_user_delete">회원 탈퇴</a>
             </section>
         <?php 

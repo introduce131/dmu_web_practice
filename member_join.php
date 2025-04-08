@@ -1,14 +1,18 @@
 <?php
-    if($_SESSION["is_checked"] === true) {
+
+    session_start();
+    if($_SESSION["is_checked"] == TRUE) {
         $id = $_POST["id"];
         $password = $_POST["password"];
         $name = $_POST["name"];
         $birth = $_POST["birth"];
         $address = $_POST["address"];
-        $email1 = $_POST["email1"];
-        $email2 = $_POST["email2"];
+       // $email1 = $_POST["email1"];
+//         $email2 = $_POST["email2"];
         
-        $email = $email1."@".$email2;
+        $email = $_POST["email"];
+        
+        //$email = $email1."@".$email2;
         
         date_default_timezone_set("Asia/Seoul");
         $createDt = date("Y-m-d H:i:s");
@@ -41,6 +45,7 @@
         echo "
                 <script>
                     alert('먼저 id 중복확인을 해주세요.');
+                    location.href = 'join.php';
                 </script>
             ";
     }

@@ -8,6 +8,8 @@
 </head>
 <body>
         <header>
+        
+        
             <ul class="gnb">
             <?php
                 $id = $_SESSION['login_id'];
@@ -17,5 +19,7 @@
             ?>
                 <li><a href="logout.php">로그아웃</a></li>
             </ul>
+            
+       
         </header>
 </body>

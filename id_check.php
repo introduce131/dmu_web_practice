@@ -26,6 +26,7 @@
     	       $result = mysqli_query($con, $query);
     	       
     	       $record_count = mysqli_num_rows($result);
+    	      
     	       
     	       if($record_count) {
     	           echo "<h4>".$id."는 이미 사용중인 아이디 입니다.</h4>";
