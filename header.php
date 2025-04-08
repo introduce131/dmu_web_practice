@@ -25,7 +25,6 @@
                 }
             ?>
                 <li><a href="profile_modified.php?id=<?php echo $id; ?>">프로필</a></li>
-                <li><a href="boardlist.php">게시판</a></li>
                 <li><a href="logout.php">로그아웃</a></li>
             </ul>
             
