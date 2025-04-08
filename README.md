@@ -17,3 +17,15 @@ CREATE TABLE `testdb`.`member`
 `profileText` VARCHAR(300) NULL , 
 PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ```
+
+### 3번, 게시판 테이블
+```sql
+CREATE TABLE board(
+  num int auto_increment,
+  title varchar(50) not null,
+  author_id varchar(50) not null,
+  author_name varchar(50) not null,
+  createDt datetime not null,
+  primary key(num)
+);
+```
