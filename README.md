@@ -1,11 +1,12 @@
 ### 1번
 
-phpMyAdmin에서 db 이름은 testdb로 생성
-그리고 인코딩 형식은 맨 아래에서 2번째 utf8 머시기
+phpMyAdmin에서 db 생성
+이름은 `testdb`
+형식은 `utf8mb4_unicode_ci`
 
 ### 2번
 아래는 SQL문임 복사해서 쓰시길
-```
+```sql
 CREATE TABLE `testdb`.`member` 
 ( `id` VARCHAR(30) NOT NULL , 
 `password` VARCHAR(30) NOT NULL , 
