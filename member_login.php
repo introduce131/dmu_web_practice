@@ -6,7 +6,7 @@ $password = $_POST["password"];  // login 폼으로 부터 받아온 비밀번�
 
 $con = mysqli_connect("localhost", "root", "", "testdb");
 
-$query = "select id, password from member where id= '".$id."'";
+$query = "select id, password, name from member where id= '".$id."'";
 $result = mysqli_query($con, $query);
 
 $record_count = mysqli_num_rows($result);
@@ -16,12 +16,16 @@ $row = mysqli_fetch_array($result);
 if ($record_count > 0) {
     $pass_id = $row["id"];
     $pass_pw = $row["password"];
-    
+    $user_name = $row["name"];
+
     // 로그인 성공 시,
     if ($pass_id === $id && $pass_pw === $password) {
         $_SESSION['count'] = 0;  // 로그인 성공 시 카운트 초기화
         
         $_SESSION['login_id'] = $pass_id;   // 세션에 id 저장
+        $_SESSION['user_name'] = $user_name;
+
+
         
         // GET 방식으로 id를 profile.php 로 넘겨서 페이지 이동
         echo "

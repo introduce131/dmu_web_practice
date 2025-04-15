@@ -1,11 +1,11 @@
 <?php
     session_start();
     
-    $num = $_GET['num'];
+    $user_num = $_GET['num'];
     
     $con = mysqli_connect("localhost", "root", "", "testdb");
     mysqli_set_charset($con, "utf8");
-    $query = "select title, content, author_name, DATE_FORMAT(createDt,'%Y-%m-%d') 'createDt' from board where num=".$num;
+    $query = "select title, content, author_name, createDt from board where num=".$user_num;
     
     $result = mysqli_query($con, $query);
     $record_count = mysqli_num_rows($result);
@@ -59,4 +59,62 @@
 	</div>
 	<br/><br/>
 	<a href="boardlist.php">목록으로</a>
+    
+    <?php 
+        $session_id =  $_SESSION['login_id'];
+        $written_name = "select author_id from board where num=".$user_num;
+        $result = mysqli_query($con, $written_name);
+
+        $row = mysqli_fetch_array($result);
+
+        $author_id = $row['author_id'];
+
+        if($session_id === $author_id){
+            echo "<a href='post_delete.php?num=".$user_num."'>삭제</a>";
+
+            
+        }
+    ?>
+
+
+    <div>
+        <?php
+            $comment_query = "SELECT * FROM comment WHERE board_num = $user_num";
+
+            $result = mysqli_query($con, $comment_query);
+            $record_count = mysqli_num_rows($result);
+
+            echo"<ul>";
+            for($i=0; $i<$record_count; $i++) {
+                $row = mysqli_fetch_array($result);
+
+                $num = $row["comment_id"];
+                $authorName = $row["author_name"];
+                $comment = $row["content"];
+                $createDt = $row["createDt"];
+
+                echo "<li>";
+
+                echo "<div>$authorName</div>";
+                echo "<div>$comment <span>$createDt</span> </div>";
+              
+            }
+
+
+            echo" </ul>";
+
+        ?>
+    </div>
+ 
+    <div>댓글달기</div>
+    <form action="comment_proc.php?num=<?php echo $user_num; ?>" method="post">
+        <input name="comment" type="text">
+        <input type="submit" >
+    </form>
+
+
+    <a href='boardlist.php'>이전으로</a>
+
+
+    
 </body>
