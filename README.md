@@ -1,6 +1,7 @@
 ### 1번
 
-phpMyAdmin에서 db 이름은 testdb로 생성
+phpMyAdmin 접속
+db 이름은 `testdb`로 생성
 그리고 인코딩 형식은 맨 아래에서 2번째 utf8 머시기
 
 ### 2번
